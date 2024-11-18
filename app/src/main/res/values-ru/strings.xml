@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Финансы</string>
+    <string name="home">Главная</string>
+    <string name="dashboard">Графики</string>
+    <string name="profile">Профиль</string>
 </resources>
