@@ -6,8 +6,11 @@ import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel()
 {
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val _listTransactions = MutableLiveData<List<String>>().apply {
+        value = listOf(
+            "Virat Kohli", "Rohit Sharma", "Steve Smith",
+            "Kane Williamson", "Ross Taylor"
+        )
     }
-    val text: LiveData<String> = _text
+    val listTransactions: LiveData<List<String>> = _listTransactions
 }

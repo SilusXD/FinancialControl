@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.financialcontrol.R
@@ -30,10 +32,16 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val listViewTransactions: ListView = binding.listViewTransactions
+        homeViewModel.listTransactions.observe(viewLifecycleOwner)
+        {
+            val adapter = activity?.applicationContext?.let {
+                it1 -> ArrayAdapter(it1, android.R.layout.simple_list_item_1, it)
+            }
+
+            listViewTransactions.adapter = adapter
         }
+
         return root
     }
 

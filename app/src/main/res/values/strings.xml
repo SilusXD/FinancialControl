@@ -3,4 +3,6 @@
     <string name="home">Home</string>
     <string name="dashboard">Dashboard</string>
     <string name="profile">Profile</string>
+    <string name="hintUserName">Имя пользователя</string>
+    <string name="hintUserEmail">Почта</string>
 </resources>
