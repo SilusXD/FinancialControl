@@ -6,11 +6,11 @@ import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel()
 {
-    private val _listTransactions = MutableLiveData<List<String>>().apply {
-        value = listOf(
-            "Virat Kohli", "Rohit Sharma", "Steve Smith",
-            "Kane Williamson", "Ross Taylor"
-        )
+    private val _listTransactions = MutableLiveData<List<Double>>()
+
+    fun setTransactions(input: List<Double>)
+    {
+        _listTransactions.value = input
     }
-    val listTransactions: LiveData<List<String>> = _listTransactions
+    fun getTransactions(): MutableLiveData<List<Double>> = _listTransactions
 }

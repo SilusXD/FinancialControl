@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.financialcontrol.DatabaseHelper
@@ -16,8 +17,8 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var profileViewModel: ProfileViewModel? = null
-    private var profileName: TextView? = null
-    private var profileEmail: TextView? = null
+    private var editTextFio: EditText? = null
+    private var editTextEmail: EditText? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,8 +29,8 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        profileName = binding.textViewFio
-        profileEmail = binding.textViewEmail
+        editTextFio = binding.editTextFio
+        editTextEmail = binding.editTextEmail
         profileViewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
 
 
@@ -53,11 +54,11 @@ class ProfileFragment : Fragment() {
 
         profileViewModel!!.getName().observe(viewLifecycleOwner)
         {
-            profileName?.text = it
+            editTextFio?.setText(it)
         }
         profileViewModel!!.getEmail().observe(viewLifecycleOwner)
         {
-            profileEmail?.text = it
+            editTextEmail?.setText(it)
         }
     }
 

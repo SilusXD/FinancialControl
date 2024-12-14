@@ -5,4 +5,12 @@
     <string name="profile">Profile</string>
     <string name="hintUserName">Имя пользователя</string>
     <string name="hintUserEmail">Почта</string>
+    <string name="name">Name</string>
+    <string name="profilePhoto">Фото профиля</string>
+    <string name="email">Почта</string>
+    <string name="add">Добавить</string>
+    <string name="delete">Удалить</string>
+    <string name="withdraw">Расход</string>
+    <string name="enter_the_amount_of_money">Enter the amount of money</string>
+    <string name="enter_in_numeric_format_only">Enter in numeric format only</string>
 </resources>
