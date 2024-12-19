@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.financialcontrol.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.time.LocalDateTime
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,14 +33,15 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.bottom_navigation_host_fragment)
         navView.setupWithNavController(navController)
 
-        val db = DatabaseHelper(this, null)
-        val cursor = db.getUsers()
+        /*val db = DatabaseHelper(this, null)
+
+        val cursor = db.getTransactions()
         cursor.moveToFirst()
         while (cursor.moveToNext())
         {
             val temp = cursor.getString(1)
             continue
-        }
+        }*/
 
     }
 }

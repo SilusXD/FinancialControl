@@ -3,14 +3,15 @@
     <string name="home">Home</string>
     <string name="dashboard">Dashboard</string>
     <string name="profile">Profile</string>
-    <string name="hintUserName">Имя пользователя</string>
-    <string name="hintUserEmail">Почта</string>
+    <string name="hintUserName">Username</string>
+    <string name="hintUserEmail">Email</string>
     <string name="name">Name</string>
-    <string name="profilePhoto">Фото профиля</string>
-    <string name="email">Почта</string>
-    <string name="add">Добавить</string>
-    <string name="delete">Удалить</string>
-    <string name="withdraw">Расход</string>
+    <string name="profilePhoto">Profile photo</string>
+    <string name="email">Email</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="withdraw">Withdraw</string>
     <string name="enter_the_amount_of_money">Enter the amount of money</string>
     <string name="enter_in_numeric_format_only">Enter in numeric format only</string>
+    <string name="allTransactions">All transactions</string>
 </resources>
