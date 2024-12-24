@@ -3,8 +3,10 @@
     <string name="home">Home</string>
     <string name="dashboard">Dashboard</string>
     <string name="profile">Profile</string>
-    <string name="hintUserName">Username</string>
-    <string name="hintUserEmail">Email</string>
+    <string name="hintUserName">Username: </string>
+    <string name="hintUserEmail">Email: </string>
+    <string name="hintGender">Gender: </string>
+    <string name="hintBirthday">Birthday: </string>
     <string name="name">Name</string>
     <string name="profilePhoto">Profile photo</string>
     <string name="email">Email</string>
@@ -14,4 +16,5 @@
     <string name="enter_the_amount_of_money">Enter the amount of money</string>
     <string name="enter_in_numeric_format_only">Enter in numeric format only</string>
     <string name="allTransactions">All transactions</string>
+    <string name="update">Update</string>
 </resources>

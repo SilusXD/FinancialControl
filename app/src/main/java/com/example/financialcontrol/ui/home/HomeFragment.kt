@@ -108,14 +108,18 @@ class HomeFragment : Fragment() {
                             {
                                 val db = activity?.let { DatabaseHelper(it.applicationContext, null) }
 
-                                db?.addTransaction(LocalDateTime.of(dateOfTransactions, time), amountMoney, 1)
+                                db?.addTransaction(LocalDateTime.of(dateOfTransactions, time),
+                                    amountMoney,
+                                    db.selectIdInTypesOfTransactionsByTypeOfTransaction("Withdraw"))
                                 updateListViewTransactions(checkBoxAllTransactions!!.isChecked)
                             }
                             else
                             {
                                 val db = activity?.let { DatabaseHelper(it.applicationContext, null) }
 
-                                db?.addTransaction(LocalDateTime.of(dateOfTransactions, time), amountMoney, 0)
+                                db?.addTransaction(LocalDateTime.of(dateOfTransactions, time),
+                                    amountMoney,
+                                    db.selectIdInTypesOfTransactionsByTypeOfTransaction("Deposit"))
                                 updateListViewTransactions(checkBoxAllTransactions!!.isChecked)
                             }
                         })
@@ -176,7 +180,7 @@ class HomeFragment : Fragment() {
                 DialogInterface.OnClickListener{
                         dialog,
                         which ->
-                    val db = activity?.let { DatabaseHelper(it.applicationContext, null) }
+                    /*val db = activity?.let { DatabaseHelper(it.applicationContext, null) }
                     var record: Transaction
                     homeViewModel!!.getTransactions().observe(viewLifecycleOwner)
                     { it ->
@@ -193,7 +197,7 @@ class HomeFragment : Fragment() {
                         {
                             ex.printStackTrace()
                         }
-                    }
+                    }*/
                     updateListViewTransactions()
                 })
             builder.setNegativeButton("Cancel",

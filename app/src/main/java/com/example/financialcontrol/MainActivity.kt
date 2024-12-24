@@ -32,16 +32,5 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.bottomNavigationView
         val navController = findNavController(R.id.bottom_navigation_host_fragment)
         navView.setupWithNavController(navController)
-
-        /*val db = DatabaseHelper(this, null)
-
-        val cursor = db.getTransactions()
-        cursor.moveToFirst()
-        while (cursor.moveToNext())
-        {
-            val temp = cursor.getString(1)
-            continue
-        }*/
-
     }
 }

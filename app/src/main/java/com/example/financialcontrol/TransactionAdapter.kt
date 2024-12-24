@@ -1,6 +1,7 @@
 package com.example.financialcontrol
 
 import android.content.Context
+import android.content.res.Configuration
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -26,22 +27,35 @@ class TransactionAdapter(context: Context, transactions: List<Transaction>) :
         val typeView = view.findViewById<TextView>(R.id.type)
         val datetimeView = view.findViewById<TextView>(R.id.datetime)
 
+        val currentNightMode: Int = context.resources.configuration.uiMode and
+                Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_NO)
+        {
+            datetimeView.setTextColor(Color.BLACK)
+            amountView.setTextColor(Color.BLACK)
+        }
+        else if(currentNightMode == Configuration.UI_MODE_NIGHT_YES)
+        {
+            datetimeView.setTextColor(Color.WHITE)
+            amountView.setTextColor(Color.WHITE)
+        }
+
         val transaction: Transaction = transactions[position]
 
         amountView.text = transaction.amount.toString()
 
-        if(transaction.idType == 0)
+        val db = DatabaseHelper(context, null)
+        val type = db.selectTypeOfTransactionInTypesOfTransactionsById(transaction.idType)
+        typeView.text = type
+        if(type == "Deposit")
         {
-            typeView.text = "Приход"
             typeView.setTextColor(Color.GREEN)
         }
         else
         {
-            typeView.text = "Расход"
             typeView.setTextColor(Color.RED)
 
         }
-
         datetimeView.text = transaction.datetime.format(
             DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"))
         return view
